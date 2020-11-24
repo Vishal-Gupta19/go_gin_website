@@ -1,10 +1,13 @@
 package wallpapers
 
+import (
+	"github.com/jinzhu/gorm"
+)
 
 // Wallpaper model
 type Wallpaper struct {
-	ID           uint    `gorm:"primary_key"`
-	Title       string `gorm:"column:title"`
-	Description string `gorm:"column:description"`
-	Image        *string `gorm:"column:image"`
+	gorm.Model
+	Title       string  `gorm:"column:title"`
+	Description string  `gorm:"column:description"`
+	Image       *string `gorm:"column:image"`
 }
