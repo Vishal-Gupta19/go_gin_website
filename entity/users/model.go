@@ -4,23 +4,21 @@ import (
 	"github.com/Vishal-Gupta19/go_gin_website/entity/database"
 	"golang.org/x/crypto/bcrypt"
 
-	//wall "github.com/Vishal-Gupta19/go_gin_website/entity/wallpapers"
-
 	"github.com/jinzhu/gorm"
 )
 
 // User : Model for user credentials
 type User struct {
 	gorm.Model
-	Username string `gorm:"column:username;primary_key"`
-	Email    string `gorm:"column:email;unique"`
-	//Bio        string  `gorm:"column:bio;size:1024"`
-	//ProfilePic *string `gorm:"column:image"`
-	Password  string `gorm:"column:password;not null"`
-	FirstName string `gorm:"column:firstname"`
-	LastName  string `gorm:"column:lastname"`
-	//City       string  `gorm:"column:city"`
-	//Wallpapers []wall.Wallpaper `gorm:"references:Username"` // User model has 'One to many' relation with Wallpaper model
+	Username   string  `gorm:"column:username;primary_key"`
+	Email      string  `gorm:"column:email;unique"`
+	Bio        string  `gorm:"column:bio;size:1024"`
+	ProfilePic *string `gorm:"column:image"`
+	Password   string  `gorm:"column:password;not null"`
+	FirstName  string  `gorm:"column:firstname"`
+	LastName   string  `gorm:"column:lastname"`
+	City       string  `gorm:"column:city"`
+	// Wallpapers []wall.Wallpaper `gorm:"references:Username"` // User model has 'One to many' relation with Wallpaper model
 }
 
 // Other utility functions

@@ -39,11 +39,14 @@ func usersRegistration(c *gin.Context) {
 
 	// Copy data in User model
 	user := User{
-		Username:  u.Username,
-		Email:     u.Email,
-		Password:  setPassword(u.Password),
-		FirstName: u.FirstName,
-		LastName:  u.LastName,
+		Username:   u.Username,
+		Email:      u.Email,
+		Password:   setPassword(u.Password),
+		FirstName:  u.FirstName,
+		LastName:   u.LastName,
+		Bio:        u.Bio,
+		ProfilePic: u.ProfilePic,
+		City:       u.City,
 	}
 
 	err = SaveNewUserToDB(&user)
